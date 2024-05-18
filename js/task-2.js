@@ -24,3 +24,24 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+const ulElem = document.querySelector('.gallery');
+console.log(ulElem);
+
+ function markupTemplate(imageObj) {
+     return `<li class="gallery-item">
+       <img src="${imageObj.url}" alt="${imageObj.alt}" class="gallery-image">
+         
+      </li>`
+  {/* //  `<li class="gallery-item"><a class="gallery-image" href="${imageObj.url}" alt="${imageObj.alt}"></a></li>` */}
+};
+
+function markupsTemplate(arr) {
+   return arr.map(markupTemplate).join('');
+//   return arr.map(colorTemplate).join('\n');
+};
+const markup = markupsTemplate(images);
+
+console.log(markup);
+
+ulElem.insertAdjacentHTML("beforeend",markup);
